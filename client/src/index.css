@@ -1,0 +1,40 @@
+body{
+  color: black;
+}
+
+img{
+  max-width: 100%;
+}
+
+main{
+ padding: 10px; 
+ max-width: 80%;
+ margin: 0 auto;
+}
+
+header{
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+header a{
+  text-decoration: none;
+  color: black;
+}
+header .logo{
+  font-weight: bold;
+}
+
+header nav{
+  display: flex;
+  gap: 15px;
+}
+
+.post{
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 20px;
+}
