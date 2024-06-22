@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { UserContext } from "./UserContext";
+import {Link} from "react-router-dom";
+import {useContext, useEffect, useState} from "react";
+import {UserContext} from "./UserContext";
 
-function Header() {
-  const {setUserInfo, userInfo} = useContext(UserContext);
+export default function Header() {
+  const {setUserInfo,userInfo} = useContext(UserContext);
   useEffect(() => {
     fetch('http://localhost:4000/profile', {
       credentials: 'include',
@@ -17,7 +17,7 @@ function Header() {
   function logout() {
     fetch('http://localhost:4000/logout', {
       credentials: 'include',
-      method: 'POST'
+      method: 'POST',
     });
     setUserInfo(null);
   }
@@ -31,7 +31,7 @@ function Header() {
         {username && (
           <>
             <Link to="/create">Create new post</Link>
-            <Link onClick={logout}>Logout</Link>
+            <a onClick={logout}>Logout ({username})</a>
           </>
         )}
         {!username && (
@@ -44,5 +44,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;
