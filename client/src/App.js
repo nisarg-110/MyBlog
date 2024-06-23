@@ -4,6 +4,7 @@ import Post from "./component/Post";
 import { Route, Routes } from "react-router-dom";
 import Register from "./component/Register";
 import { UserContextProvider } from "./component/UserContext";
+import CreatePost from "./component/CreatePost";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="/create" element={<CreatePost />} />
       </Routes>
     </UserContextProvider>
   );
